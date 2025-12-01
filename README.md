@@ -60,40 +60,44 @@ flowchart TD
 
 ## 📦 Project Structure
 
-project-lantern/
+project-lantern-agents-capstone/
 │
-├── agents/
-│   ├── ocr_agent.py              # backend-agnostic OCR
-│   ├── threading_agent.py        # manifest-driven thread reconstruction
-│   └── extraction_agent.py       # entities, summaries, enrichment
+├── agents/                         # Core multi-agent implementations
+│   ├── ocr_agent.py                # Backend-agnostic OCR (Gemini → OpenAI → Mock)
+│   ├── threading_agent.py          # Manifest-based thread reconstruction
+│   └── extraction_agent.py         # Summaries, entities, enrichment
 │
-├── src/
-│   ├── pipeline.py               # high-level orchestration
-│   ├── search_index.py           # DuckDB builder
-│   └── utils_env.py              # environment loader
+├── src/                            # Orchestration + indexing utilities
+│   ├── pipeline.py                 # Full pipeline runner (OCR → thread → extract)
+│   ├── search_index.py             # DuckDB search index builder
+│   └── utils_env.py                # Environment + configuration loader
 │
-├── tools/
-│   ├── cleanup_tools.py          # text normalization
-│   ├── ocr_tools.py              # OCR fallback utility
-│   └── jsonl_tools.py            # read/write JSONL
-│
-├── config/
-│   ├── defaults.env              # example config
-│   ├── feature_flags.yaml        # optional
-│   └── README.md
+├── tools/                          # Internal helper utilities
+│   ├── cleanup_tools.py            # Text normalization
+│   ├── ocr_tools.py                # OCR fallback + helper functions
+│   └── jsonl_tools.py              # JSONL read/write helpers
 │
 ├── data/
-│   ├── manifest.csv
-│   ├── images/                   # input scans
-│   └── outputs/
-│       ├── pages.jsonl
-│       └── sequences.jsonl
+│   ├── manifest.csv                # Sample manifest for demo subset
+│   ├── images/                     # Input demo images (user-provided)
+│   └── outputs/                    # Generated artifacts
+│       ├── pages.jsonl             # Page-level enriched OCR records
+│       └── sequences.jsonl         # Reconstructed thread-level records
 │
-└── notebooks/
-    ├── 0_Setup_and_Environment.ipynb
-    ├── 5_Visualization_Walkthrough.ipynb
-    ├── project-lantern-architecture.png
-    └── ...
+├── notebooks/
+│   ├── demo.ipynb                  # Demo subset walkthrough
+│   ├── project_lantern_capstone.ipynb   # Full capstone notebook
+│   └── 0_Setup_and_Environment.ipynb
+│
+├── figures/                        # Architecture + flow diagrams
+│   ├── lantern_architecture.png
+│   ├── project_lantern_architecture_diagram.png
+│   ├── searchable_intelligence_flow_diagram.png
+│   └── project_lantern_thumbnail.png
+│
+├── LICENSE
+├── README.md
+└── .gitignore
 
 ---
 
