@@ -1,0 +1,10 @@
+{
+  "raw_text": "[MOCK_OCR] Text for HOUSE_OVERSIGHT_016425.jpg",
+  "clean_text": "[MOCK_OCR] Text for HOUSE_OVERSIGHT_016425.jpg",
+  "ocr_text": "[MOCK_OCR] Text for HOUSE_OVERSIGHT_016425.jpg",
+  "ocr_text_length": 46,
+  "confidence": 0.0,
+  "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+  "model": "gemini-1.5-flash",
+  "engine": "mock"
+}

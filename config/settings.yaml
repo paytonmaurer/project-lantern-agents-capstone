@@ -1,0 +1,14 @@
+paths:
+  data_dir: "./data"
+  manifest: "./data/manifest.csv"
+  output_dir: "./data/outputs"
+
+ocr:
+  model_name: "gpt-4.1-mini"   # placeholder; swap for ADK model later
+  max_retries: 2
+
+threading:
+  enable_threads: true
+
+extraction:
+  enable_insights: true
