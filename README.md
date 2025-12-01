@@ -20,19 +20,27 @@ This project demonstrates **real-world multi-agent system design**, **resilient 
 
 Below is the core project flow as a **Mermaid system diagram** (renders automatically on GitHub):
 
-```mermaid
 flowchart TD
+    A[Raw scans (JPG/PNG)] --> B[OCR Agent (Gemini / OpenAI / Mock)]
+    B --> C[OCR outputs: raw_text, clean_text, confidence]
+    C --> D[Threading Agent (sequence grouping)]
+    D --> E[Extraction Agent: summaries, entities, search_text]
+    E --> F[JSONL exports: pages.jsonl, sequences.jsonl]
+    F --> G[DuckDB index (lantern.duckdb)]
+    G --> H[Search & filtering (keyword + metadata)]
+    E --> I[Notebook visualizations (image + OCR + insights)]
 
-    A[📁 Raw Scans<br>JPG/PNG] --> B[🟦 OCR Agent<br>(Gemini / OpenAI / Mock)]
-    B --> C[📝 OCR Outputs<br>raw_text, clean_text, confidence]
-    C --> D[🧵 Threading Agent<br>sequence grouping]
+---
 
-    D --> E[🧠 Extraction Agent<br>page + sequence summaries<br>entities, search_text]
-    E --> F[📤 JSONL Exports<br>pages.jsonl<br>sequences.jsonl]
-    F --> G[🗂 DuckDB Index<br>lantern.duckdb]
+## 🧱 System Architecture Diagram
 
-    G --> H[🔎 Search + Filtering<br>keyword + metadata]
-    E --> I[📊 Notebook Visualizations<br>image + OCR + insights side-by-side]
+<p align="center"> <img src="assets/diagrams/assets/diagrams/project_lantern_architecture_diagram.png" alt="Project LANTERN multi-agent architecture diagram" width="900" /> </p> <p align="center"><em>Figure 1 — High-level multi-agent architecture powering OCR, sequencing, enrichment, and search.</em></p>
+
+---
+
+## 🔍 Searchable Intelligence Flow Diagram
+
+<p align="center"> <img src="assets/diagrams/assets/diagrams/searchable_intelligence_flow_diagram.png" alt="Searchable Intelligence Flow Diagram" width="900" /> </p> <p align="center"><em>Figure 2 — How raw OCR transforms into structured, searchable intelligence via JSONL exports + DuckDB indexing.</em></p>
 
 ---
 
@@ -194,9 +202,10 @@ EXPORT_DIR="./data/outputs"
 
 ---
 
-## ⚙️ Quickstart
+## ⚙️ Quickstart Guide
 
-1. Install dependencies
+1️⃣ Install Dependencies
+
 pip install -r requirements.txt
 
 or minimal:
@@ -204,7 +213,7 @@ pip install duckdb python-dotenv pillow plotly pandas
 
 ---
 
-2. 🧪 Running the Pipeline (Core Flow)
+2️⃣ Run the Pipeline
 
 from src.pipeline import run_pipeline
 from src.utils_env import load_environment
@@ -212,15 +221,12 @@ from agents.ocr_agent import OCRAgent
 from agents.threading_agent import ThreadingAgent
 from agents.extraction_agent import ExtractionAgent
 
-# 1) Load config from .env
 cfg = load_environment()
 
-# 2) Initialize agents
 ocr = OCRAgent.from_env(cfg)
 threader = ThreadingAgent()
 extract = ExtractionAgent.from_env(cfg)
 
-# 3) Run
 pages, sequences = run_pipeline(
     manifest_df,
     ocr_agent=ocr,
@@ -232,7 +238,7 @@ print(f"✅ Pipeline complete. Pages: {len(pages)}, Sequences: {len(sequences)}"
 
 ---
 
-3. 🔎 Search with DuckDB
+3️⃣ Query the DuckDB Intelligence Layer
 
 from src.search_index import open_duckdb
 
@@ -252,23 +258,26 @@ results.head()
 
 ## 📊 Notebook Demonstration
 
-Use notebooks/5_Visualization_Walkthrough.ipynb to:
-- Display image + OCR + structured insights
-- Walk through sequences
-- Query DuckDB search results
+Use:
+notebooks/5_Visualization_Walkthrough.ipynb
 
-This is the primary demo surface for judges.
+You’ll be able to:
+- Display scanned pages
+- Preview OCR output
+- Explore extracted insights
+- Analyze threads
+- Run DuckDB keyword search
 
 ---
 
 ## 🏅 Why LANTERN Stands Out
 
-✔ Clean multi-agent architecture
-✔ Backend-agnostic OCR strategy
-✔ Manifest-driven sequencing
-✔ Deterministic + LLM-enhanced extraction
-✔ DuckDB-powered intelligence layer
-✔ High-quality, production-style documentation
+✔ Professional multi-agent design
+✔ Clear fallback chain for OCR robustness
+✔ Deterministic + LLM-powered extraction options
+✔ Thread reconstruction for hard document sets
+✔ DuckDB search layer for instant intelligence
+✔ Polished diagrams, documentation & demo workflow
 
 ---
 
@@ -278,8 +287,8 @@ This is the primary demo surface for judges.
 Senior Data Strategy & Digital Analytics Consultant  
 Specializing in multi-agent systems, GA4/GTM architecture, and large-scale data pipelines.  
 
-- 📧 payton.k.maurer@gmail.com  
-- 🌐 LinkedIn: https://www.linkedin.com/in/paytonmaurer 
+- 📧 payton.k.maurer@gmail.com   
+- 🌐 LinkedIn: [https://www.linkedin.com/in/paytonmaurer](https://www.linkedin.com/in/paytonmaurer)
 
 ---
 
