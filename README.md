@@ -62,35 +62,34 @@ flowchart TD
 
 project-lantern-agents-capstone/
 │
-├── agents/                         # Core multi-agent implementations
-│   ├── ocr_agent.py                # Backend-agnostic OCR (Gemini → OpenAI → Mock)
-│   ├── threading_agent.py          # Manifest-based thread reconstruction
-│   └── extraction_agent.py         # Summaries, entities, enrichment
+├── agents/                          
+│   ├── ocr_agent.py                     # Backend-agnostic OCR (Gemini → OpenAI → Mock)
+│   ├── threading_agent.py               # Manifest-based thread reconstruction
+│   └── extraction_agent.py              # Summaries, entities, enrichment
 │
-├── src/                            # Orchestration + indexing utilities
-│   ├── pipeline.py                 # Full pipeline runner (OCR → thread → extract)
-│   ├── search_index.py             # DuckDB search index builder
-│   └── utils_env.py                # Environment + configuration loader
+├── src/
+│   ├── pipeline.py                      # Full pipeline runner (OCR → thread → extract)
+│   ├── search_index.py                  # DuckDB search index builder
+│   └── utils_env.py                     # Environment + configuration loader
 │
-├── tools/                          # Internal helper utilities
-│   ├── cleanup_tools.py            # Text normalization
-│   ├── ocr_tools.py                # OCR fallback + helper functions
-│   └── jsonl_tools.py              # JSONL read/write helpers
+├── tools/
+│   ├── cleanup_tools.py                 # Text normalization helpers
+│   ├── ocr_tools.py                     # OCR fallback + utility functions
+│   └── jsonl_tools.py                   # JSONL read/write helpers
 │
 ├── data/
-│   ├── manifest.csv                # Sample manifest for demo subset
-│   ├── images/                     # Input demo images (user-provided)
-│   └── outputs/                    # Generated artifacts
-│       ├── pages.jsonl             # Page-level enriched OCR records
-│       └── sequences.jsonl         # Reconstructed thread-level records
+│   ├── manifest.csv                     # Demo subset manifest
+│   ├── images/                          # Input demo images (user-provided)
+│   └── outputs/
+│       ├── pages.jsonl                  # Page-level enriched OCR records
+│       └── sequences.jsonl              # Thread-level reconstructed records
 │
 ├── notebooks/
-│   ├── demo.ipynb                  # Demo subset walkthrough
+│   ├── demo.ipynb                       # Demo subset walkthrough
 │   ├── project_lantern_capstone.ipynb   # Full capstone notebook
 │   └── 0_Setup_and_Environment.ipynb
 │
-├── figures/                        # Architecture + flow diagrams
-│   ├── lantern_architecture.png
+├── figures/
 │   ├── project_lantern_architecture_diagram.png
 │   ├── searchable_intelligence_flow_diagram.png
 │   └── project_lantern_thumbnail.png
@@ -98,6 +97,7 @@ project-lantern-agents-capstone/
 ├── LICENSE
 ├── README.md
 └── .gitignore
+
 
 ---
 
