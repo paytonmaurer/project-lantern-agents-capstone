@@ -32,15 +32,29 @@ flowchart TD
 
 ---
 
-## 🧱 System Architecture Diagram
+## 🧩 System Architecture
 
-<p align="center"> <img src="assets/diagrams/assets/diagrams/project_lantern_architecture_diagram.png" alt="Project LANTERN multi-agent architecture diagram" width="900" /> </p> <p align="center"><em>Figure 1 — High-level multi-agent architecture powering OCR, sequencing, enrichment, and search.</em></p>
+<div align="center">
+  <img src="figures/project_lantern_architecture_diagram.png" 
+       alt="Project LANTERN Multi-Agent Architecture Diagram" 
+       width="750">
+
+  <br/>
+  <em>Figure 1 — High-level multi-agent architecture powering OCR, sequencing, enrichment, and search.</em>
+</div>
 
 ---
 
 ## 🔍 Searchable Intelligence Flow Diagram
 
-<p align="center"> <img src="assets/diagrams/assets/diagrams/searchable_intelligence_flow_diagram.png" alt="Searchable Intelligence Flow Diagram" width="900" /> </p> <p align="center"><em>Figure 2 — How raw OCR transforms into structured, searchable intelligence via JSONL exports + DuckDB indexing.</em></p>
+<div align="center">
+  <img src="figures/searchable_intelligence_flow_diagram.png" 
+       alt="Searchable Intelligence Flow Diagram" 
+       width="750">
+
+  <br/>
+  <em>Figure 2 — How raw OCR output transforms into a structured, searchable intelligence layer.</em>
+</div>
 
 ---
 
