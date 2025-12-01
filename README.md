@@ -21,7 +21,8 @@ This project demonstrates **real-world multi-agent system design**, **resilient 
 Below is the core project flow as a **Mermaid system diagram** (renders automatically on GitHub):
 
 flowchart TD
-    A[Raw scans (JPG/PNG)] --> B[OCR Agent (Gemini / OpenAI / Mock)]
+
+    A [Raw scans (JPG/PNG)] --> B [OCR Agent (Gemini / OpenAI / Mock)]
     B --> C[OCR outputs: raw_text, clean_text, confidence]
     C --> D[Threading Agent (sequence grouping)]
     D --> E[Extraction Agent: summaries, entities, search_text]
