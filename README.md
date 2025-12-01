@@ -104,8 +104,8 @@ project-lantern-agents-capstone/
 ├── README.md
 └── .gitignore
 
-</details>
 ```
+</details>
 </br>
 
 ---
