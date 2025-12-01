@@ -106,6 +106,8 @@ project-lantern-agents-capstone/
 
 </details>
 ```
+</br>
+
 ---
 
 ## 🚀 Key Features (Judge-Facing Summary)
@@ -169,10 +171,11 @@ Perfect for demonstration and extension.
 
 ## 🔐 Environment & Authentication
 
-Project LANTERN uses a .env file to keep credentials safe and portable.
+Project LANTERN uses a `.env` file to keep credentials safe and portable.
 
-.env Template (Do NOT commit real keys)
+### `.env` Template (Do NOT commit real keys)
 
+```env
 # ─────────────────────────────────────────────
 # Project LANTERN — Environment Configuration
 # ─────────────────────────────────────────────
@@ -214,6 +217,7 @@ PROJECT_ROOT="./"
 DATA_ROOT="./data"
 OCR_CACHE_DIR="./data/ocr_cache"
 EXPORT_DIR="./data/outputs"
+```
 
 ---
 
